@@ -1,6 +1,8 @@
 const path = require("path");
 const common = require("./webpack.common");
 const merge = require("webpack-merge");
+const webpack = require("webpack");
+const autoprefixer = require("autoprefixer");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
@@ -17,7 +19,7 @@ module.exports = merge(common, {
     rules: [
       {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader"],
+        use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
       },
     ],
   },
@@ -34,6 +36,11 @@ module.exports = merge(common, {
       filename: "index.html",
       template: "./src/template.html",
       minify: true,
+    }),
+    new webpack.LoaderOptionsPlugin({
+      options: {
+        postcss: [autoprefixer()],
+      },
     }),
   ],
 });
