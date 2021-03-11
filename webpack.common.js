@@ -7,7 +7,10 @@ module.exports = {
     rules: [
       {
         test: /\.html$/,
-        use: ["html-loader"],
+        loader: 'html-loader',
+				options: {
+					esModule: false
+				}
       },
       {
         test: /\.js$/,
