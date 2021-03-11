@@ -6,6 +6,10 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.html$/,
+        use: ["html-loader"],
+      },
+      {
         test: /\.js$/,
         exclude: /node_modules/,
         use: { loader: "babel-loader" },
@@ -18,13 +22,11 @@ module.exports = {
         test: /\.(png|jpe?g|gif|svg)$/i,
         use: [
           {
-            loader: "url-loader",
+            loader: "file-loader",
             options: {
-              limit: 100000,
-              fallback: "file-loader",
-              name: "[name].[ext]",
-              publicPath: "images/",
-              outputPath: "images/",
+              name: "[name].[hash].[ext]",
+              outputPath: "images",
+              publicPath: "images",
             },
           },
         ],
@@ -35,7 +37,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: "index.html",
       template: "./src/template.html",
-			minify: false,
     }),
   ],
 };

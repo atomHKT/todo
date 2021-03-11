@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack://todo/./src/index.js"],"names":["alert"],"mappings":";;;;;AACAA,KAAK,CAAC,YAAD,CAAL,C","file":"main.js","sourcesContent":["\nalert(\"hello boss\");"],"sourceRoot":""}
