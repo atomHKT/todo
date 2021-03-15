@@ -1,0 +1,1 @@
+(()=>{"use strict";function n(n,e,r,t){var d=document.createElement(n);return e&&(d.id=e),r&&(Array.isArray(r)?r.forEach((function(n){return d.classList.add(n)})):d.classList.add(r)),t&&(d.innerHTML=t),d}!function(){var e=document.getElementById("content"),r=n("div","proj-container","","");n("div","proj-console","","");e.appendChild(r),e.appendChild(r),header}()})();

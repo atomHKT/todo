@@ -10,7 +10,7 @@ module.exports = merge(common, {
     filename: "main.js",
     path: path.resolve(__dirname, "dist"),
   },
-	module: {
+  module: {
     rules: [
       {
         test: /\.css$/,
@@ -18,12 +18,15 @@ module.exports = merge(common, {
       },
     ],
   },
-	plugins: [
-		new HtmlWebpackPlugin({
+  devServer: {
+		port: 8080,
+		contentBase: '/dist/',
+	},
+  plugins: [
+    new HtmlWebpackPlugin({
       filename: "index.html",
       template: "./src/template.html",
-			minify: false,
+      minify: false,
     }),
   ],
 });
- 
