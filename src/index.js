@@ -1,4 +1,5 @@
 import renderMain from "./modules/initial-load";
+import "./modules/firebase-db-connect";
 
 const main = renderMain();
 

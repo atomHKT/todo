@@ -11,7 +11,7 @@ const renderMain = () => {
 
 
     bodyContent.appendChild(projContainer);
-    console.log("tototo")
+    console.log("totot")
 
     return {
         projContainer,
